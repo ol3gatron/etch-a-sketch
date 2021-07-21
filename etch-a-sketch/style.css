@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(16, 50px);
+  grid-template-rows: repeat(16, 50px);
+}
+
+.grid-cell {
+  border: 1px solid black;
+}
+
+.grid-cell:hover {
+  background-color: black;
+}
