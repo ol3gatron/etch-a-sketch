@@ -14,8 +14,8 @@
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(16, 50px);
-  grid-template-rows: repeat(16, 50px);
+  grid-template-columns: repeat(16, 45px);
+  grid-template-rows: repeat(16, 45px);
 }
 
 .grid-cell {
@@ -23,9 +23,5 @@
 }
 
 .grid-cell-black {
-  background-color: black;
-}
-
-.grid-cell:hover {
   background-color: black;
 }
