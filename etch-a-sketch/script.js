@@ -7,5 +7,4 @@ function createGridCell(x) {
     grid.appendChild(gridItem);
   }
 }
-
 createGridCell(16*16);
