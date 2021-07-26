@@ -1,4 +1,10 @@
+// let popup = prompt("Enter a grid size. Example: 4 -> 4x4")
+
 const grid = document.querySelector(".grid");
+const resetButton = document.createElement("button");
+const btn = document.querySelector(".reset");
+
+
 
 function createGridCell(x) {
   for (i = 0; i < x; i++) {
@@ -17,9 +23,9 @@ gridCells.forEach((gridCells) => {
   });
 });
 
-// const gridCell = document.querySelectorAll(".grid-cell");
-// gridCell.forEach((".grid-cell") => {
-//   gridCell.addEventListener("mouseover", () => {
-//     gridCell.classList.toggle("grid-cell-black");
-//   });
-// });
+
+btn.addEventListener("click", () => {
+  gridCells.forEach((gridCells) => {
+    gridCells.classList.remove("grid-cell-black");
+  });
+});
