@@ -1,4 +1,11 @@
-gridItem = document.createElement("div");
 container = document.querySelector(".container");
 
-container.appendChild("div");
+function createRows(x) {
+  for (let i = 0; i < x; i++) {
+    gridItem = document.createElement("div");
+    gridItem.classList.add("fieldItem")
+    container.appendChild(gridItem)
+  }
+}
+
+createRows(4);
