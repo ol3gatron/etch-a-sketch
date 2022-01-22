@@ -1,7 +1,8 @@
-const container = document.querySelector(".container");
+let container = document.querySelector(".container");
 const button = document.querySelector("button");
 // let fieldSize = prompt("Enter a grid size");
 let fieldSize = 16;
+const body = document.querySelector("body")
 
 function createRows(y) {
   for (let i = 0; i < y; i++) {
@@ -57,7 +58,7 @@ function randomColor() {
   }
 }
 
-const rows = document.querySelectorAll(".row");
+let rows = document.querySelectorAll(".row");
 rows.forEach(row => {
   row.addEventListener("mouseover", () => {
     row.style.cssText = `background-color: ${randomColor()}`
@@ -67,5 +68,17 @@ rows.forEach(row => {
 button.addEventListener("click", () => {
   rows.forEach(row => {
     row.style.cssText = "background-color: "
+  });
+  body.removeChild(container);
+  container = document.createElement("div")
+  container.classList.add("container")
+  body.appendChild(container)
+  let fieldSize = prompt("Enter a size of field")
+  createColumns(fieldSize)
+  rows = document.querySelectorAll(".row");
+  rows.forEach(row => {
+    row.addEventListener("mouseover", () => {
+      row.style.cssText = `background-color: ${randomColor()}`
+    })
   });
 })
