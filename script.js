@@ -1,31 +1,28 @@
-// let popup = prompt("Enter a grid size. Example: 4 -> 4x4")
+const container = document.querySelector(".container");
+let fieldSize = prompt("Введите размер сетки")
 
-const grid = document.querySelector(".grid");
-const resetButton = document.createElement("button");
-const btn = document.querySelector(".reset");
-
-
-
-function createGridCell(x) {
-  for (i = 0; i < x; i++) {
-    const gridItem = document.createElement("div");
-    gridItem.classList.add("grid-cell");
-    grid.appendChild(gridItem);
+function createRows(y) {
+  for (let i = 0; i < y; i++) {
+    row = document.createElement("div")
+    row.classList.add("row")
+    column.appendChild(row)
   }
 }
 
-createGridCell(16*16);
+function createColumns(x) {
+  for (let i = 0; i < x; i++) {
+    column = document.createElement("div");
+    column.classList.add("column")
+    container.appendChild(column)
+    createRows(x)
+  }
+}
 
-const gridCells = document.querySelectorAll(".grid-cell");
-gridCells.forEach((gridCells) => {
-  gridCells.addEventListener("mouseover", () => {
-    gridCells.classList.add("grid-cell-black");
-  });
-});
+createColumns(fieldSize)
 
-
-btn.addEventListener("click", () => {
-  gridCells.forEach((gridCells) => {
-    gridCells.classList.remove("grid-cell-black");
-  });
+const rows = document.querySelectorAll(".row");
+rows.forEach(row => {
+  row.addEventListener("mouseover", () => {
+    row.classList.toggle("black")
+  })
 });
