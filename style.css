@@ -7,6 +7,7 @@
 body {
   height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -33,4 +34,15 @@ body {
 
 .black {
   background-color: black;
+}
+
+button {
+  margin-bottom: 10px;
+}
+
+@media (max-width: 440px) {
+  .container {
+    width: 300px;
+    height: 300px;
+  }
 }
